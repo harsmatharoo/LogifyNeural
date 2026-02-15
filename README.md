@@ -108,7 +108,6 @@ $$
 \sigma(x) = \frac{1}{1 + e^{-x}}
 $$
 
-![Sigmoid Function Diagram](sigmoid_diagram.png)
 
 **Reading the diagram:**
 
