@@ -1,4 +1,6 @@
 # LogifyNeural
+<img width="477" height="166" alt="image" src="https://github.com/user-attachments/assets/695e5f63-4d09-4f7b-84cc-f68e3dc53ac8" />
+
 
 ![Python](https://img.shields.io/badge/Python-3.8+-3572A5?style=flat&logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-web-e8603c?style=flat&logo=flask&logoColor=white)
