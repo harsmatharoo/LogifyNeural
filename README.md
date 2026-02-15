@@ -221,7 +221,6 @@ That's it. You're running LogifyNeural.
    ├── app.py                → the web app
    ├── model.pkl             → saved trained model (created by train.py)
    ├── user_data.jsonl       → your feedback labels (created automatically)
-   ├── sigmoid_diagram.png   → diagram used in this README
    ├── requirements.txt      → all dependencies in one file
    └── .gitignore            → tells git to ignore model.pkl and cache files
 ```
