@@ -109,13 +109,15 @@ $$
 $$
 
 
+<img width="696" height="500" alt="image" src="https://github.com/user-attachments/assets/b91584e7-e66e-4548-808c-ace2035acd08" />
+
+
 **Reading the diagram:**
 
 - The green S-curve is the sigmoid function
 - Left side (negative scores) = ham territory — the curve is near 0
 - Right side (positive scores) = spam territory — the curve is near 1
-- The yellow dashed lines mark the 0.5 decision boundary — cross it and you're spam
-- The two colored dots show real example messages and exactly where they land
+- Crossing decision boundary would lead to spam
 
 **Scores to probabilities quick reference:**
 
