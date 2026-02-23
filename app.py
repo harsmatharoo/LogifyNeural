@@ -269,7 +269,7 @@ HTML = r"""
             oninput="updateCounter(this)">{{ text }}</textarea>
           <div class="counter" id="counter">0 characters · 0 words</div>
           <div class="row">
-            <button class="btn btn-primary" type="submit">🔍 Analyze</button>
+            <button class="btn btn-primary" type="submit"> Analyze</button>
             <button class="btn" type="button" onclick="fillExample(1)">Spam example</button>
             <button class="btn" type="button" onclick="fillExample(0)">Normal example</button>
             <button class="btn" type="button" onclick="clearBox()">Clear</button>
@@ -277,12 +277,12 @@ HTML = r"""
         </form>
 
         {% if error %}<div class="error-box">{{ error }}</div>{% endif %}
-        {% if saved %}<div class="toast">✅ Label saved to <code>user_data.jsonl</code>. Retrain with <code>python train.py</code>.</div>{% endif %}
+        {% if saved %}<div class="toast"> Label saved to <code>user_data.jsonl</code>. Retrain with <code>python train.py</code>.</div>{% endif %}
 
         {% if result %}
         <div class="result-box">
           <div class="verdict {% if result.pred == 1 %}verdict-spam{% else %}verdict-ham{% endif %}">
-            <span class="verdict-icon">{% if result.pred == 1 %}🚨{% else %}✅{% endif %}</span>
+            <span class="verdict-icon">{% if result.pred == 1 %}{% else %}{% endif %}</span>
             <span>
               {% if result.pred == 1 %}SPAM{% else %}NOT SPAM{% endif %}
               <span class="confidence">— {{ result.confidence }}</span>
@@ -300,19 +300,19 @@ HTML = r"""
 
           {% if result.spam_words %}
           <div class="spam-words">
-            <b>🔑 Top spam signals:</b>
+            <b> Top spam signals:</b>
             {% for w in result.spam_words %}<span class="spam-tag">{{ w }}</span>{% endfor %}
           </div>
           {% endif %}
 
-          {% if result.reason %}<div class="reason-box">⚠️ {{ result.reason }}</div>{% endif %}
+          {% if result.reason %}<div class="reason-box"> {{ result.reason }}</div>{% endif %}
 
           <!-- Inline sigmoid with dot -->
           {% if result.sigmoid_img %}
           <div class="sigmoid-preview">
             <img src="data:image/png;base64,{{ result.sigmoid_img }}" alt="Sigmoid curve">
             <div class="sigmoid-link-row">
-              <span>📍 White dot = your message on the sigmoid curve</span>
+              <span> White dot = your message on the sigmoid curve</span>
               <a href="/sigmoid" target="_blank">Open full chart →</a>
             </div>
           </div>
@@ -328,7 +328,7 @@ HTML = r"""
             <form method="post" action="/feedback" style="display:inline;">
               <input type="hidden" name="text" value="{{ text|e }}">
               <input type="hidden" name="label" value="0">
-              <button class="btn" type="submit">✅ Not spam</button>
+              <button class="btn" type="submit"> Not spam</button>
             </form>
           </div>
         </div>
@@ -521,7 +521,7 @@ def save_feedback(text: str, label: int):
 
 def get_confidence_label(prob: float, pred: int) -> str:
     if pred == 1:
-        if prob > 0.85:   return "Very likely spam"
+        if prob > 0.87:   return "Very likely spam"
         elif prob > 0.65: return "Probably spam"
         else:             return "Borderline"
     else:
@@ -691,4 +691,5 @@ def predict_api():
 
 
 if __name__ == "__main__":
+
     app.run(debug=True)
